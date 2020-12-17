@@ -4,7 +4,7 @@ export default {
     "Harta, Tahta, Angelia >.<",
     "Hey! I wuv chuuuu! UwU",
   ],
-  panggilan: ["Angelia", "Angel"],
+  panggilan: ["Angelia"],
   colors: [
     "#FF6900",
     "#FCB900",

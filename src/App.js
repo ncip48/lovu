@@ -3,6 +3,7 @@ import { TwitterPicker } from "react-color";
 import reactCSS from "reactcss";
 import baffle from "baffle";
 //import Baffle from "baffle-react";
+import ReactAudioPlayer from "react-audio-player";
 
 import "./style/App.css";
 import "./style/Heart.css";
@@ -218,6 +219,12 @@ class App extends Component {
             <div></div>
           </div>
         </footer>
+        <ReactAudioPlayer
+          style={{ height: 20, width: 100 }}
+          src={require("./music.mp3")}
+          autoPlay
+          controls
+        />
       </div>
     );
   }
