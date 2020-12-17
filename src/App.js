@@ -5,7 +5,7 @@ import baffle from "baffle";
 //import Baffle from "baffle-react";
 
 import "./style/App.css";
-import "./style/Heart.css"
+import "./style/Heart.css";
 import config from "./config";
 
 class App extends Component {
@@ -67,15 +67,16 @@ class App extends Component {
       var hours = new Date().getHours(); //Current Hours
       var min = new Date().getMinutes(); //Current Minutes
       var sec = new Date().getSeconds(); //Current Seconds
+
       if (hours >= 18) {
         greeting = "Evening";
-      }else if (hours >= 15) {
+      } else if (hours >= 15) {
         greeting = "Afternoon";
-      }else if (hours >= 11) {
+      } else if (hours >= 11) {
         greeting = "Day";
-      }else if (hours >= 5) {
+      } else if (hours >= 5) {
         greeting = "Morning";
-      }else if (hours >= 0) {
+      } else if (hours >= 0) {
         greeting = "Night";
       }
       this.setState({
@@ -185,12 +186,22 @@ class App extends Component {
                 {this.state.text}
                 <span id="cursor" />
               </h3>
-              <ul class="heart-shape">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+              <ul className="heart-shape">
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
               </ul>
             </div>
             <div

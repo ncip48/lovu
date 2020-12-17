@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 0;
 }
 
 .heart-shape li {
@@ -15,7 +16,7 @@
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0);
 
   position: absolute;
   display: block;
@@ -24,7 +25,7 @@
   bottom: -150px;
   transition: all 1s ease;
 }
-.heart-shape li:before {
+/* .heart-shape li:before {
   position: absolute;
   width: 25px;
   height: 50px;
@@ -49,7 +50,7 @@
 .heart-shape li:after {
   top: -25px;
   right: 0px;
-}
+} */
 
 .heart-shape li:nth-child(1) {
   left: 86%;
@@ -58,7 +59,7 @@
   animation-delay: 0s;
 }
 
-.heart-shape li:nth-child(1):before {
+/* .heart-shape li:nth-child(1):before {
   position: absolute;
   width: 40px;
   height: 80px;
@@ -84,7 +85,7 @@
 .heart-shape li:nth-child(1):after {
   top: -40px;
   right: 0px;
-}
+} */
 
 .heart-shape li:nth-child(2) {
   left: 12%;
@@ -94,7 +95,7 @@
   animation-duration: 10s;
 }
 
-.heart-shape li:nth-child(2):before {
+/* .heart-shape li:nth-child(2):before {
   position: absolute;
   width: 15px;
   height: 30px;
@@ -120,7 +121,7 @@
 .heart-shape li:nth-child(2):after {
   top: -15px;
   right: 0px;
-}
+} */
 
 .heart-shape li:nth-child(3) {
   left: 70%;
@@ -129,7 +130,7 @@
   animation-delay: 5.5s;
 }
 
-.heart-shape li:nth-child(3):before {
+/* .heart-shape li:nth-child(3):before {
   position: absolute;
   width: 50px;
   height: 100px;
@@ -155,7 +156,7 @@
 .heart-shape li:nth-child(3):after {
   top: -50px;
   right: 0px;
-}
+} */
 
 .heart-shape li:nth-child(4) {
   left: 42%;
@@ -165,7 +166,7 @@
   animation-duration: 15s;
 }
 
-.heart-shape li:nth-child(4):before {
+/* .heart-shape li:nth-child(4):before {
   position: absolute;
   width: 75px;
   height: 150px;
@@ -191,7 +192,7 @@
 .heart-shape li:nth-child(4):after {
   top: -75px;
   right: 0px;
-}
+} */
 
 .heart-shape li:nth-child(5) {
   left: 15%;
@@ -200,7 +201,7 @@
   animation-delay: 3.5s;
 }
 
-.heart-shape li:nth-child(5):before {
+/* .heart-shape li:nth-child(5):before {
   position: absolute;
   width: 55px;
   height: 110px;
@@ -226,4 +227,4 @@
 .heart-shape li:nth-child(5):after {
   top: -55px;
   right: 0px;
-}
+} */
