@@ -154,7 +154,7 @@ class App extends Component {
           MozTransition: "all .7s ease",
         }}
       >
-        <header className="masthead mb-auto">
+        <header className="masthead">
           <nav className="navbar navbar-expand-md navbar-dark fixed-top">
             <div className="navbar-brand">
               <div style={styles.swatch} onClick={this.handleClick}>
@@ -180,14 +180,16 @@ class App extends Component {
             <div
               className={this.state.bgcolor === "#000000" ? "hidden" : "show"}
             >
-              <h1 className="jams">{this.state.curdate}</h1>
-              <h2 className="panggilans">
-                Good {this.state.greeting} {this.state.panggilan}
-              </h2>
-              <h3 className="ucapans">
-                {this.state.text}
-                <span id="cursor" />
-              </h3>
+              <div className="wrapper">
+                <h1 className="jams">{this.state.curdate}</h1>
+                <h2 className="panggilans">
+                  Good {this.state.greeting} {this.state.panggilan}
+                </h2>
+                <h3 className="ucapans">
+                  {this.state.text}
+                  <span id="cursor" />
+                </h3>
+              </div>
               <ul className="heart-shape">
                 <li>
                   <div className="pixelized--heart"></div>
@@ -209,23 +211,25 @@ class App extends Component {
             <div
               className={this.state.bgcolor !== "#000000" ? "hidden" : "show"}
             >
-              <h1 className="jams">{this.state.curdate}</h1>
-              <h1 className="hadeh">
-                <span
-                  className="glitch"
-                  data-text={
-                    this.state.greeting === "Morning" ||
-                    this.state.greeting === "Evening"
-                      ? "Jadian Yukkk"
-                      : this.state.greeting === "Night"
-                      ? "Jadian Yuk"
-                      : "Jadian Yukkkkkk"
-                  }
-                >
-                  Good {this.state.greeting + ", "}
-                </span>
-                {this.state.panggilan + "❣️"}
-              </h1>
+              <div className="wrapper-dark">
+                <h1 className="jams">{this.state.curdate}</h1>
+                <h1 className="hadeh">
+                  <span
+                    className="glitch"
+                    data-text={
+                      this.state.greeting === "Morning" ||
+                      this.state.greeting === "Evening"
+                        ? "Jadian Yukkk"
+                        : this.state.greeting === "Night"
+                        ? "Jadian Yuk"
+                        : "Jadian Yukkkkkk"
+                    }
+                  >
+                    Good {this.state.greeting + ", "}
+                  </span>
+                  {this.state.panggilan + "❣️"}
+                </h1>
+              </div>
             </div>
           </div>
         </main>

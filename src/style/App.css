@@ -213,6 +213,18 @@ body {
   z-index: 1;
 }
 
+.wrapper,
+.wrapper-dark {
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 @media only screen and (max-width: 900px), screen and (max-height: 700px) {
   .jam,
   .jams,
