@@ -7,6 +7,7 @@ import ReactAudioPlayer from "react-audio-player";
 
 import "./style/App.css";
 import "./style/Heart.css";
+import "./style/Glitch.css";
 import config from "./config";
 
 class App extends Component {
@@ -44,7 +45,7 @@ class App extends Component {
     this.setState({ bgcolor: color.hex });
     if (color.hex === "#000000") {
       if (!this.state.already) {
-        this.baffle();
+        // this.baffle();
       }
     } else {
       this.setState({ already: false });
@@ -74,7 +75,7 @@ class App extends Component {
       } else if (hours >= 15) {
         greeting = "Afternoon";
       } else if (hours >= 11) {
-        greeting = "Day";
+        greeting = "Afternoon";
       } else if (hours >= 5) {
         greeting = "Morning";
       } else if (hours >= 0) {
@@ -179,11 +180,11 @@ class App extends Component {
             <div
               className={this.state.bgcolor === "#000000" ? "hidden" : "show"}
             >
-              <h1 className="jam">{this.state.curdate}</h1>
-              <h2 className="panggilan">
+              <h1 className="jams">{this.state.curdate}</h1>
+              <h2 className="panggilans">
                 Good {this.state.greeting} {this.state.panggilan}
               </h2>
-              <h3 className="ucapan">
+              <h3 className="ucapans">
                 {this.state.text}
                 <span id="cursor" />
               </h3>
@@ -208,8 +209,22 @@ class App extends Component {
             <div
               className={this.state.bgcolor !== "#000000" ? "hidden" : "show"}
             >
-              <h1 className="baffle">
-                Hey njel, do you want to be my shikigami?
+              <h1 className="jams">{this.state.curdate}</h1>
+              <h1 className="hadeh">
+                <span
+                  className="glitch"
+                  data-text={
+                    this.state.greeting === "Morning" ||
+                    this.state.greeting === "Evening"
+                      ? "Jadian Yukkk"
+                      : this.state.greeting === "Night"
+                      ? "Jadian Yuk"
+                      : "Jadian Yukkkkkk"
+                  }
+                >
+                  Good {this.state.greeting + ", "}
+                </span>
+                {this.state.panggilan + "❣️"}
               </h1>
             </div>
           </div>

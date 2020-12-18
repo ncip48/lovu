@@ -153,7 +153,27 @@ body {
   right: 0;
   bottom: 50%;
   text-align: center;
-  transform: translate(-0%, calc(50% - 0px));
+  /* transform: translate(-0%, calc(50% - 0px)); */
+  animation: 3s ease-out 0s 1 animate2;
+}
+
+.jams {
+  font-size: 80pt;
+  animation: 3s ease-out 0s 1 animate2;
+}
+
+.panggilans {
+  font-size: 35pt;
+  animation: 3s ease-out 0s 1 animate2;
+}
+
+.ucapans {
+  font-size: 25pt;
+  animation: 3s ease-out 0s 1 animate2;
+}
+
+.hadeh {
+  animation: 3s ease-out 0s 1 animate2;
   animation: 3s ease-out 0s 1 animate2;
 }
 
@@ -166,7 +186,7 @@ body {
   right: 0;
   bottom: 50%;
   text-align: center;
-  transform: translate(-0%, calc(50% + 100px));
+  /* transform: translate(-0%, calc(50% + 100px)); */
   animation: 3s ease-out 0s 1 animate2;
 }
 
@@ -179,7 +199,7 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  transform: translate(-0%, calc(50% + 100px));
+  /* transform: translate(-0%, calc(50% + 100px)); */
   animation: 3s ease-out 0s 1 animate2;
 }
 
@@ -192,6 +212,7 @@ body {
 
 @media only screen and (max-width: 900px), screen and (max-height: 700px) {
   .jam,
+  .jams,
   .panggilan {
     transition: all 1s ease;
   }
@@ -199,13 +220,23 @@ body {
     font-size: 50pt;
     transform: translate(-0%, calc(50% - 0px));
   }
+  .jams {
+    font-size: 50pt;
+  }
   .panggilan {
     font-size: 25pt;
     transform: translate(-0%, calc(50% + 50px));
   }
   .panggilan,
-  .ucapan {
+  .ucapan,
+  .panggilans,
+  .ucapans {
     font-size: 25pt;
+  }
+
+  .ucapan {
+    margin-top: 0px;
+    transform: translate(-0%, calc(50% + 50px));
   }
 }
 @media only screen and (max-width: 500px) {
@@ -215,6 +246,10 @@ body {
   .ucapan {
     font-size: 15pt;
     bottom: 50%;
+  }
+  .ucapan {
+    margin-top: 0px;
+    transform: translate(-0%, calc(50% + 50px));
   }
 }
 
