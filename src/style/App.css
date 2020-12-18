@@ -205,7 +205,10 @@ body {
 
 .jam,
 .panggilan,
-.ucapan {
+.ucapan,
+.jams,
+.ucapans,
+.panggilans {
   transition: all 5s ease, color 1s ease;
   z-index: 1;
 }
