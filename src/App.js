@@ -221,7 +221,7 @@ class App extends Component {
                       this.state.greeting === "Evening"
                         ? "Jadian Yukkk"
                         : this.state.greeting === "Night"
-                        ? "Jadian Yuk"
+                        ? "Balikan Yu"
                         : "Jadian Yukkkkkk"
                     }
                   >
