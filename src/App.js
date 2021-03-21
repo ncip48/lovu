@@ -89,9 +89,9 @@ class App extends Component {
       var secres = sec < 10 ? "0" + sec : sec;
 
       if (hours >= 18) {
-        greeting = "Evening";
+        greeting = "Night";
       } else if (hours >= 15) {
-        greeting = "Afternoon";
+        greeting = "Evening";
       } else if (hours >= 11) {
         greeting = "Afternoon";
       } else if (hours >= 5) {
