@@ -4,7 +4,8 @@ export default {
     "Harta, Tahta, Angelia >.<",
     "Hey! I wuv chuuuu! UwU",
   ],
-  panggilan: ["Angelia"],
+  authorized: ["180.247.208.251", "202.67.39.21"],
+  panggilan: ["Angelia", "Byy"],
   colors: [
     "#FF6900",
     "#FCB900",

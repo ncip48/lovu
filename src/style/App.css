@@ -159,11 +159,13 @@ body {
 
 .jams {
   font-size: 80pt;
+  font-family: "Ubuntu", sans-serif;
   animation: 3s ease-out 0s 1 animate2;
 }
 
 .panggilans {
   font-size: 35pt;
+  font-family: "Dancing Script", cursive;
   animation: 3s ease-out 0s 1 animate2;
 }
 
