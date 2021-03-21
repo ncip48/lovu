@@ -22,6 +22,7 @@ class App extends Component {
       typingSpeed: 150,
       already: false,
       authorized: true,
+      ip: null,
     };
   }
 
@@ -50,7 +51,7 @@ class App extends Component {
         const whitelist = config.authorized.includes(data.ip);
         // console.log(whitelist);
         if (whitelist === false) {
-          this.setState({ authorized: false });
+          this.setState({ authorized: false, ip: data.ip });
         }
       });
   };
@@ -197,34 +198,45 @@ class App extends Component {
             <div
               className={this.state.bgcolor === "#000000" ? "hidden" : "show"}
             >
-              <div className="wrapper">
-                <h1 className="jams">{this.state.curdate}</h1>
-                <h2 className="panggilans">
-                  Good {this.state.greeting} {this.state.panggilan}
-                </h2>
-                {/* <h3 className="ucapans">
+              {!this.state.authorized ? (
+                <div className="wrapper">
+                  <h1 className="panggilans">
+                    Maaf anda tidak diperbolehkan akses situs ini,
+                    {this.state.ip}
+                  </h1>
+                </div>
+              ) : (
+                <>
+                  <div className="wrapper">
+                    <h1 className="jams">{this.state.curdate}</h1>
+                    <h2 className="panggilans">
+                      Good {this.state.greeting} {this.state.panggilan}
+                    </h2>
+                    {/* <h3 className="ucapans">
                   {this.state.text}
                   <span id="cursor" />
                 </h3> */}
-                <h3 className="ucapans">Semangat UAS nyaaa yaaa ❤❤❤</h3>
-              </div>
-              <ul className="heart-shape">
-                <li>
-                  <div className="pixelized--heart"></div>
-                </li>
-                <li>
-                  <div className="pixelized--heart"></div>
-                </li>
-                <li>
-                  <div className="pixelized--heart"></div>
-                </li>
-                <li>
-                  <div className="pixelized--heart"></div>
-                </li>
-                <li>
-                  <div className="pixelized--heart"></div>
-                </li>
-              </ul>
+                    <h3 className="ucapans">Semangat UAS nyaaa yaaa ❤❤❤</h3>
+                  </div>
+                  <ul className="heart-shape">
+                    <li>
+                      <div className="pixelized--heart"></div>
+                    </li>
+                    <li>
+                      <div className="pixelized--heart"></div>
+                    </li>
+                    <li>
+                      <div className="pixelized--heart"></div>
+                    </li>
+                    <li>
+                      <div className="pixelized--heart"></div>
+                    </li>
+                    <li>
+                      <div className="pixelized--heart"></div>
+                    </li>
+                  </ul>
+                </>
+              )}
             </div>
             <div
               className={this.state.bgcolor !== "#000000" ? "hidden" : "show"}
