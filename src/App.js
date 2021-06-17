@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { TwitterPicker } from "react-color";
-// import reactCSS from "reactcss";
+import { TwitterPicker } from "react-color";
+import reactCSS from "reactcss";
 import baffle from "baffle";
 //import Baffle from "baffle-react";
 import ReactAudioPlayer from "react-audio-player";
@@ -21,8 +21,6 @@ class App extends Component {
       loopNum: 0,
       typingSpeed: 150,
       already: false,
-      authorized: true,
-      ip: null,
     };
   }
 
@@ -33,7 +31,6 @@ class App extends Component {
         config.panggilan[Math.floor(Math.random() * config.panggilan.length)],
     });
     this.getwaktu();
-    this.fetchIP();
   }
 
   handleClick = () => {
@@ -42,18 +39,6 @@ class App extends Component {
 
   handleClose = () => {
     this.setState({ displayColorPicker: false });
-  };
-
-  fetchIP = () => {
-    fetch("https://api.my-ip.io/ip.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const whitelist = config.authorized.includes(data.ip);
-        // console.log(whitelist);
-        if (whitelist === false) {
-          this.setState({ authorized: false, ip: data.ip });
-        }
-      });
   };
 
   handleChangeComplete = (color) => {
@@ -82,16 +67,13 @@ class App extends Component {
     setInterval(() => {
       var greeting;
       var hours = new Date().getHours(); //Current Hours
-      var hoursres = hours < 10 ? "0" + hours : hours;
       var min = new Date().getMinutes(); //Current Minutes
-      var minres = min < 10 ? "0" + min : min;
       var sec = new Date().getSeconds(); //Current Seconds
-      var secres = sec < 10 ? "0" + sec : sec;
 
       if (hours >= 18) {
-        greeting = "Night";
-      } else if (hours >= 15) {
         greeting = "Evening";
+      } else if (hours >= 15) {
+        greeting = "Afternoon";
       } else if (hours >= 11) {
         greeting = "Afternoon";
       } else if (hours >= 5) {
@@ -100,7 +82,7 @@ class App extends Component {
         greeting = "Night";
       }
       this.setState({
-        curdate: hoursres + ":" + minres + ":" + secres,
+        curdate: hours + ":" + min + ":" + sec,
         greeting: greeting,
       });
     }, 0);
@@ -131,35 +113,35 @@ class App extends Component {
   };
 
   render() {
-    // const styles = reactCSS({
-    //   default: {
-    //     color: {
-    //       width: "36px",
-    //       height: "14px",
-    //       borderRadius: "2px",
-    //       background: `${this.state.bgcolor}`,
-    //     },
-    //     swatch: {
-    //       padding: "5px",
-    //       background: "#fff",
-    //       borderRadius: "1px",
-    //       boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
-    //       display: "inline-block",
-    //       cursor: "pointer",
-    //     },
-    //     popover: {
-    //       position: "absolute",
-    //       zIndex: "2",
-    //     },
-    //     cover: {
-    //       position: "fixed",
-    //       top: "0px",
-    //       right: "0px",
-    //       bottom: "0px",
-    //       left: "0px",
-    //     },
-    //   },
-    // });
+    const styles = reactCSS({
+      default: {
+        color: {
+          width: "36px",
+          height: "14px",
+          borderRadius: "2px",
+          background: `${this.state.bgcolor}`,
+        },
+        swatch: {
+          padding: "5px",
+          background: "#fff",
+          borderRadius: "1px",
+          boxShadow: "0 0 0 1px rgba(0,0,0,.1)",
+          display: "inline-block",
+          cursor: "pointer",
+        },
+        popover: {
+          position: "absolute",
+          zIndex: "2",
+        },
+        cover: {
+          position: "fixed",
+          top: "0px",
+          right: "0px",
+          bottom: "0px",
+          left: "0px",
+        },
+      },
+    });
 
     return (
       <div
@@ -172,7 +154,7 @@ class App extends Component {
           MozTransition: "all .7s ease",
         }}
       >
-        {/* <header className="masthead">
+        <header className="masthead">
           <nav className="navbar navbar-expand-md navbar-dark fixed-top">
             <div className="navbar-brand">
               <div style={styles.swatch} onClick={this.handleClick}>
@@ -191,52 +173,40 @@ class App extends Component {
               ) : null}
             </div>
           </nav>
-        </header> */}
+        </header>
 
         <main role="main" className="inner">
           <div>
             <div
               className={this.state.bgcolor === "#000000" ? "hidden" : "show"}
             >
-              {!this.state.authorized ? (
-                <div className="wrapper">
-                  <h1 className="panggilans">
-                    Maaf anda tidak diperbolehkan akses situs ini,
-                    {this.state.ip}
-                  </h1>
-                </div>
-              ) : (
-                <>
-                  <div className="wrapper">
-                    <h1 className="jams">{this.state.curdate}</h1>
-                    <h2 className="panggilans">
-                      Good {this.state.greeting} {this.state.panggilan}
-                    </h2>
-                    {/* <h3 className="ucapans">
+              <div className="wrapper">
+                <h1 className="jams">{this.state.curdate}</h1>
+                <h2 className="panggilans">
+                  Good {this.state.greeting} {this.state.panggilan}
+                </h2>
+                <h3 className="ucapans">
                   {this.state.text}
                   <span id="cursor" />
-                </h3> */}
-                    <h3 className="ucapans">Semangat UAS nyaaa yaaa ❤❤❤</h3>
-                  </div>
-                  <ul className="heart-shape">
-                    <li>
-                      <div className="pixelized--heart"></div>
-                    </li>
-                    <li>
-                      <div className="pixelized--heart"></div>
-                    </li>
-                    <li>
-                      <div className="pixelized--heart"></div>
-                    </li>
-                    <li>
-                      <div className="pixelized--heart"></div>
-                    </li>
-                    <li>
-                      <div className="pixelized--heart"></div>
-                    </li>
-                  </ul>
-                </>
-              )}
+                </h3>
+              </div>
+              <ul className="heart-shape">
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+                <li>
+                  <div className="pixelized--heart"></div>
+                </li>
+              </ul>
             </div>
             <div
               className={this.state.bgcolor !== "#000000" ? "hidden" : "show"}
