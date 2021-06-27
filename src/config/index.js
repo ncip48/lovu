@@ -1,11 +1,11 @@
 export default {
   ucapan: [
     "Whatever happens, keep breathing",
-    "Harta, Tahta, Cewek Kalimantan >.<",
+    "Harta, Tahta, Laila >.<",
     "Hey! I wuv chuuuu! UwU",
   ],
   authorized: ["180.247.208.251", "202.67.39.21", "36.73.188.37"],
-  panggilan: ["Fenny", "Ayang"],
+  panggilan: ["Lala", "Laila"],
   colors: [
     "#FF6900",
     "#FCB900",
