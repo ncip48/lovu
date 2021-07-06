@@ -1,7 +1,7 @@
 export default {
   ucapan: [
     "Whatever happens, keep breathing",
-    "Harta, Tahta, Laila >.<",
+    "Harta, Tahta, Kamu >.<",
     "Hey! I wuv chuuuu! UwU",
   ],
   authorized: ["180.247.208.251", "202.67.39.21", "36.73.188.37"],
